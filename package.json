@@ -1,0 +1,31 @@
+{
+  "name": "linear-timetable-solver",
+  "version": "2.0.2",
+  "description": "Timetable generating algorithm for university schedule implemented in a linear method using Typescript. One of a possiable solution for generating a class schedule at university level based on multi-dimensional arrays. The success of solution is estimated on fulfillment of given constraints and criteria. Results of testing the algorithm show that all hard constraints are satisfied, while additional criteria are optimized to a certain extent.",
+  "private": true,
+  "scripts": {
+    "start": "node dist/index.js",
+    "watch": "tsc --watch",
+    "build": "tsc",
+    "dev": "nodemon src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdaudy2/Linear-TimeTable-solver.git"
+  },
+  "author": "hdaudy2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hdaudy2/Linear-TimeTable-solver/issues"
+  },
+  "homepage": "https://github.com/hdaudy2/Linear-TimeTable-solver#readme",
+  "devDependencies": {
+    "@types/jsonfile": "^6.0.1",
+    "@types/node": "^17.0.5",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "jsonfile": "^6.1.0"
+  }
+}
