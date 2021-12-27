@@ -52,8 +52,8 @@ Syntax of room object is like:
 
 ```typescript
    {
-      name: room name as String ,
-      type: 'classroom' | 'lab' ,
+      name: room name as String,
+      type: 'classroom' | 'lab',
    },
 ```
 
@@ -111,17 +111,97 @@ Syntax of room object is like:
 
 ```typescript
 {
-   year: Number;
-   semester: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 as SemestersOptions;
-   labs?: String[]; // same name of the room
+   year: Number ,
+   semester: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 as SemestersOptions ,
+   labs?: String[] , // same name of the room
    sections: {
-      name: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | I' as SectionNames;
+      name: 'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G' | 'H' | I' as SectionNames ,
       room: String , // same name of the room
       subjects: [
          subject name as String ,
          "class" | "lab",
          instructor name as String
-      ][];
-   }[];
+      ][] ,
+   }[] ,
 },
+```
+Running ```npm start``` runs the code executing the algorithm for the data.
+
+## Output
+```
+   ┌─────────┬───────┬─────────┬──────────┐
+   │ (index) │ BATCH │ SECTION │ SEMESTER │
+   ├─────────┼───────┼─────────┼──────────┤
+   │    0    │ 2022  │   'B'   │    1     │
+   └─────────┴───────┴─────────┴──────────┘
+   ┌─────────┬──────────┐
+   │ (index) │   DAY    │
+   ├─────────┼──────────┤
+   │    0    │ 'Monday' │
+   └─────────┴──────────┘
+   ┌─────────┬────────────────────────────┬─────────┬─────────────────┬─────────┐
+   │ (index) │          subject           │  type   │   instructor    │  room   │
+   ├─────────┼────────────────────────────┼─────────┼─────────────────┼─────────┤
+   │  09:00  │ 'Introduction to Computer' │ 'class' │ 'instructor-03' │ 'BBA05' │
+   │  10:00  │   'Arabic/Chinese etc I'   │ 'class' │ 'instructor-02' │ 'BBA05' │
+   │  11:00  │            '-'             │   '-'   │       '-'       │   '-'   │
+   │  01:00  │            '-'             │   '-'   │       '-'       │   '-'   │
+   │  02:00  │   'Arabic/Chinese etc I'   │ 'class' │ 'instructor-02' │ 'BBA05' │
+   └─────────┴────────────────────────────┴─────────┴─────────────────┴─────────┘
+   ┌─────────┬───────────┐
+   │ (index) │    DAY    │
+   ├─────────┼───────────┤
+   │    0    │ 'Tuesday' │
+   └─────────┴───────────┘
+   ┌─────────┬────────────────────────────┬─────────┬─────────────────┬────────────────┐
+   │ (index) │          subject           │  type   │   instructor    │      room      │
+   ├─────────┼────────────────────────────┼─────────┼─────────────────┼────────────────┤
+   │  09:00  │ 'Introduction to Computer' │ 'class' │ 'instructor-03' │    'BBA05'     │
+   │  10:00  │            '-'             │   '-'   │       '-'       │      '-'       │
+   │  11:00  │ 'Introduction to Computer' │  'lab'  │ 'instructor-03' │ 'Software-lab' │
+   │  01:00  │     'Islamic Studies'      │ 'class' │ 'instructor-05' │    'BBA05'     │
+   │  02:00  │   'Arabic/Chinese etc I'   │ 'class' │ 'instructor-02' │    'BBA05'     │
+   └─────────┴────────────────────────────┴─────────┴─────────────────┴────────────────┘
+   ┌─────────┬─────────────┐
+   │ (index) │     DAY     │
+   ├─────────┼─────────────┤
+   │    0    │ 'Wednesday' │
+   └─────────┴─────────────┘
+   ┌─────────┬────────────────────────────┬─────────┬─────────────────┬─────────┐
+   │ (index) │          subject           │  type   │   instructor    │  room   │
+   ├─────────┼────────────────────────────┼─────────┼─────────────────┼─────────┤
+   │  09:00  │    'Contemporary World'    │ 'class' │ 'instructor-09' │ 'BBA05' │
+   │  10:00  │     'Pakistan Studies'     │ 'class' │ 'instructor-04' │ 'BBA05' │
+   │  11:00  │        'English-I'         │ 'class' │ 'instructor-01' │ 'BBA05' │
+   │  01:00  │ 'Introduction to Computer' │ 'class' │ 'instructor-03' │ 'BBA05' │
+   │  02:00  │     'Islamic Studies'      │ 'class' │ 'instructor-05' │ 'BBA05' │
+   └─────────┴────────────────────────────┴─────────┴─────────────────┴─────────┘
+   ┌─────────┬────────────┐
+   │ (index) │    DAY     │
+   ├─────────┼────────────┤
+   │    0    │ 'Thursday' │
+   └─────────┴────────────┘
+   ┌─────────┬────────────────────────────┬─────────┬─────────────────┬────────────────┐
+   │ (index) │          subject           │  type   │   instructor    │      room      │
+   ├─────────┼────────────────────────────┼─────────┼─────────────────┼────────────────┤
+   │  09:00  │            '-'             │   '-'   │       '-'       │      '-'       │
+   │  10:00  │     'Pakistan Studies'     │ 'class' │ 'instructor-04' │    'BBA05'     │
+   │  11:00  │    'Contemporary World'    │ 'class' │ 'instructor-09' │    'BBA05'     │
+   │  01:00  │ 'Introduction to Computer' │  'lab'  │ 'instructor-03' │ 'Software-lab' │
+   │  02:00  │            '-'             │   '-'   │       '-'       │      '-'       │
+   └─────────┴────────────────────────────┴─────────┴─────────────────┴────────────────┘
+   ┌─────────┬──────────┐
+   │ (index) │   DAY    │
+   ├─────────┼──────────┤
+   │    0    │ 'Friday' │
+   └─────────┴──────────┘
+   ┌─────────┬──────────────────────┬─────────┬─────────────────┬─────────┐
+   │ (index) │       subject        │  type   │   instructor    │  room   │
+   ├─────────┼──────────────────────┼─────────┼─────────────────┼─────────┤
+   │  09:00  │         '-'          │   '-'   │       '-'       │   '-'   │
+   │  10:00  │ 'Contemporary World' │ 'class' │ 'instructor-09' │ 'BBA05' │
+   │  11:00  │     'English-I'      │ 'class' │ 'instructor-01' │ 'BBA05' │
+   │  01:00  │         '-'          │   '-'   │       '-'       │   '-'   │
+   │  02:00  │     'English-I'      │ 'class' │ 'instructor-01' │ 'BBA05' │
+   └─────────┴──────────────────────┴─────────┴─────────────────┴─────────┘
 ```
