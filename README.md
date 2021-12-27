@@ -125,7 +125,7 @@ Syntax of room object is like:
    }[] ,
 },
 ```
-Running ```npm start``` runs the code executing the algorithm for the data.
+Running ```npm build && npm start``` runs the code executing the algorithm for the data.
 
 ## Output
 output will be printed in the terminal.
